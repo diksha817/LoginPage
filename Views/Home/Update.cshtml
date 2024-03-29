@@ -1,0 +1,62 @@
+﻿@model Book
+<html>
+<head>
+    <title>
+    </title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <div>
+            Create Category
+        </div>
+        <table class="table table-bordered table-striped">
+            <tbody>
+                <tr>
+                    <td>
+                        <label asp-for="ISBN"></label>
+                    </td>
+                    <td>
+                        <input asp-for="ISBN" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label asp-for="Author"></label>
+                    </td>
+                    <td>
+                        <input asp-for="Author" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label asp-for="Title"></label>
+                    </td>
+                    <td>
+                        <input asp-for="Title" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label asp-for="Price"></label>
+                    </td>
+                    <td>
+                        <input asp-for="Price" required />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button tye="submit" class="btn btn-primary" style="width:150px">UPDATE</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary" style="width:150px">Back to List</a>
+    </form>
+</body>
+</html>

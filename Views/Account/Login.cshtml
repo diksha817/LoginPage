@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout_Login.cshtml";
+}
+@model Week2.Models.Account.LoginCred
+<html>
+    <head>
+        <title></title>
+                <style type="text/css">
+
+            form{
+                display:inline-block;
+                border-style:solid;
+                padding:20px;
+                margin-top:100px;
+                margin-left:450px;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="post" asp-action="Login" >
+        <div class="form-group">
+            <label asp-for="Username"></label>
+            <input type="text" asp-for="Username" placeholder="Enter Username" class="form-control" autocomplete="off" required/>
+            <span class="text-danger">@TempData["errorUsername"]</span>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input type="password" asp-for="Password" placeholder="Enter Password" class="form-control" autocomplete="off" required/>
+                <span class="text-danger">@TempData["errorPassword"]</span>
+                
+        </div>
+        <br/>
+        <div class="form-group">
+            <input type="submit" class="btn btn-block btn-primary mb-2" value="Log In"/>
+        </div>
+        </form>
+    </body>
+</html>
