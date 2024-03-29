@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WEEK2.Models.Book>
+﻿@model WEEK2.Models.Book
 
 <html>
 <head>
@@ -34,21 +34,20 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var Book in Model)
-            {
+
                     <tr>
-                        <td width="20%">@Book.ISBN</td>
-                        <td width="50%">@Book.Title</td>
-                        <td width="50%">@Book.Author</td>
-                        <td width="50%">@Book.Price</td>
+                        <td width="20%">@Model.ISBN</td>
+                        <td width="50%">@Model.Title</td>
+                        <td width="50%">@Model.Author</td>
+                        <td width="50%">@Model.Price</td>
                         <td>
                             <form asp-controller="Home" asp-action="DeleteUser" method="post" onsubmit="return confirm('Are you sure you want to delete this book?')">
-                                <input type="hidden" name="ISBN" value="@Book.ISBN"/>
+                                <input type="hidden" name="ISBN" value="@Model.ISBN"/>
                            <button class="btn btn-danger" type="submit" ><i class="bi bi-trash"></i></button>
                             </form>
                         </td>
                     </tr>
-            }
+           
         </tbody>
     </table>
 

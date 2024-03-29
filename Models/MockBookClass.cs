@@ -28,7 +28,7 @@ namespace WEEK2.Models
 
         public Book GetBookbyName(string bookname)
         {
-            return books.First((Book b) => b.Title == bookname);
+            return books.First((Book b) => b.Title.ToLower() == bookname.ToLower());
         }
         public void AddBook(Book book)
         {
